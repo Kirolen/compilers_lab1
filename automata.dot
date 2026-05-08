@@ -1,0 +1,26 @@
+digraph DFA {
+    rankdir=LR;
+    bgcolor="white";
+    node [shape=circle, color=black, fontcolor=black, fontsize=18];
+    edge [color=black, fontcolor=black, fontsize=16];
+
+    start [shape=point];
+
+    A [label="{1,2,3,4}"];
+    B [label="{5,6,7}", shape=doublecircle];
+    C [label="{6,7}", shape=doublecircle];
+    D [label="∅", style=dashed];
+
+    start -> A;
+
+    A -> B [label="x"];
+    A -> C [label="y"];
+    A -> D [label="z"];
+
+    B -> A [label="z"];
+    B -> D [label="x,y"];
+
+    C -> D [label="x,y,z"];
+
+    D -> D [label="x,y,z"];
+}
